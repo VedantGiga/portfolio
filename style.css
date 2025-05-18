@@ -788,6 +788,8 @@ section::before {
     position: relative;
     overflow: hidden;
     height: 250px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid var(--main-color);
 }
 
 .project-img img {
@@ -795,11 +797,26 @@ section::before {
     height: 100%;
     object-fit: cover;
     transition: all 0.6s ease;
+    display: block;
 }
 
 .project-box:hover .project-img img {
     transform: scale(1.1);
     filter: brightness(0.7);
+}
+
+/* Fallback for missing images */
+.image-fallback {
+    background: linear-gradient(135deg, rgba(0, 255, 81, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fallback-icon {
+    font-size: 5rem;
+    color: var(--main-color);
+    opacity: 0.7;
 }
 
 .project-overlay {
